@@ -4,3 +4,7 @@
 [submodule "components/lvgl_esp32_drivers"]
 	path = components/lvgl_esp32_drivers
 	url = https://github.com/lvgl/lvgl_esp32_drivers.git
+[submodule "components/leddisplay"]
+	path = components/leddisplay
+	url = https://github.com/phkehl/esp32-leddisplay.git
+	branch = master
