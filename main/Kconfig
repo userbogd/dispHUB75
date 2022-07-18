@@ -1,0 +1,14 @@
+# Kconfig for lv_examples v7.4.0
+
+menu "lv_examples configuration"
+
+    config LV_EX_PRINTF
+        bool "Enable printf-ing data in demos and examples."
+    
+
+    
+    config LV_DEMO_WIDGETS_SLIDESHOW
+        bool "Slide demo widgets automatically."
+        depends on LV_USE_DEMO_WIDGETS
+        default y
+endmenu

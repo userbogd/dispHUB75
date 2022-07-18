@@ -1,6 +1,12 @@
-idf_component_register(SRCS "main.c"
-							"mon.c"
-							"nyan_64x32.c"
+if(ESP_PLATFORM)
 
-                    INCLUDE_DIRS ".")
- target_compile_options(${COMPONENT_TARGET} PUBLIC -DNO_GFX)				
+file(GLOB_RECURSE SOURCES lv_examples/*.c)
+
+idf_component_register(SRCS ${SOURCES}
+                       "main.c"
+                       INCLUDE_DIRS .
+                       REQUIRES lvgl)
+
+else()
+    message(FATAL_ERROR "LVGL LV examples: ESP_PLATFORM is not defined. Try reinstalling ESP-IDF.")
+endif()			
